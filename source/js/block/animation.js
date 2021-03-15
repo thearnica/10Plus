@@ -1,0 +1,1 @@
+import {  inTime,  removeClassFrom,  waterfall,} from "./global";const startAnimation = () => {  waterfall([    inTime(300),    inTime(0, () => removeClassFrom('.page', 'page--hidden')),  ]);};startAnimation();

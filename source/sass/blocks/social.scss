@@ -1,0 +1,24 @@
+.social {
+  position: relative;
+
+  color: $white300;
+  text-decoration: none;
+
+  transition-timing-function: linear;
+  transition-duration: 300ms;
+  transition-property: color;
+
+  &:hover,
+  &:focus {
+    color: $white1000;
+  }
+}
+
+.social span {
+  @include visuallyHidden;
+}
+
+.social svg {
+  width: 100%;
+  height: auto;
+}

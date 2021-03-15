@@ -1,0 +1,16 @@
+.wrapper {
+  width: 100%;
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding: 0 6%;
+
+  box-sizing: border-box;
+
+  @include from($tablet) {
+    padding: 0 4.5%;
+  }
+
+  @include from($laptop) {
+    padding: 0 3.5%;
+  }
+}

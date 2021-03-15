@@ -1,0 +1,10 @@
+.logotype {
+  @include center;
+
+  color: $red1000;
+}
+
+.logotype svg {
+  width: 100%;
+  height: auto;
+}

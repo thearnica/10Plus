@@ -1,0 +1,42 @@
+@keyframes light {
+  0% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.45;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes gear {
+  0% {
+    transform: rotate(0);
+    transform-origin: center;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes lamp {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(-2%);
+  }
+  50% {
+    transform: translateY(1.5%);
+  }
+  100% {
+    transform: translateY(-2%);
+  }
+}

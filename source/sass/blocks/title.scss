@@ -1,0 +1,59 @@
+.title {
+  font-family: "Noir Pro", monospace;
+  @include font(33px, 1);
+  font-weight: 400;
+  color: $white1000;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include from($laptop) {
+    font-size: 70px;
+  }
+
+  @include from($desktop) {
+    font-size: 100px;
+  }
+
+  &--large {
+    @include font(60px, 0.88);
+
+    @include from($tablet) {
+      font-size: 110px;
+    }
+
+    @include from($desktop) {
+      font-size: 140px;
+    }
+
+    @include from(1440px) {
+      font-size: 170px;
+    }
+  }
+
+  &--medium {
+    @include font(33px, 1);
+
+    @include from($tablet) {
+      font-size: 53px;
+    }
+
+    @include from($desktop) {
+      font-size: 70px;
+    }
+  }
+
+  &--small {
+    font-family: "IBM Plex Mono", monospace;
+    @include font(19px, 1.4);
+    font-weight: 500;
+    letter-spacing: -0.0225em;
+
+    @include from($laptop) {
+      font-size: 28px;
+    }
+  }
+
+  &--left {
+    text-align: left;
+  }
+}

@@ -1,0 +1,218 @@
+.person {
+  padding-top: $spacing * 2;
+
+  @include from($laptop) {
+    padding-top: $spacing * 6;
+  }
+}
+
+.person__wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.person__title {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+  margin-bottom: -4%;
+
+  transition-timing-function: linear;
+  transition-duration: 400ms;
+  transition-property: opacity, transform;
+
+  &--hidden {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+.person__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+
+  transition-timing-function: linear;
+  transition-duration: 300ms;
+  transition-property: opacity;
+
+  &--hidden {
+    opacity: 0;
+  }
+}
+
+.person__image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  max-width: 1176px;
+
+  overflow: hidden;
+}
+
+.person__image img {
+  width: 100%;
+  height: auto;
+}
+
+.person__role {
+  margin: 0;
+  margin-top: $spacing * 3;
+
+  @include from($laptop) {
+    margin-top: $spacing * 7;
+  }
+}
+
+.person__club {
+  position: relative;
+
+  display: inline-block;
+
+  width: 100%;
+  max-width: 1010px;
+  margin: 0;
+  margin-top: $spacing * 4;
+
+  @include from($laptop) {
+    margin-top: $spacing * 5;
+  }
+
+  &::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -$spacing * 3;
+    content: "";
+
+    display: block;
+    height: 1px;
+
+    background-color: $white300;
+  }
+}
+
+.person__text {
+  margin: 0;
+  margin-top: $spacing * 3;
+
+  @include from($laptop) {
+    margin-top: $spacing * 7;
+  }
+}
+
+.person__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  width: 100%;
+  max-width: 1010px;
+  padding: 0;
+  margin: 0;
+  margin-top: $spacing * 4;
+
+  list-style: none;
+
+  counter-reset: data;
+
+  @include from($laptop) {
+    margin-top: $spacing * 6;
+  }
+}
+
+.person__term {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+
+  width: 40%;
+  height: $spacing * 8;
+
+  border-bottom: 1px solid rgba(196, 196, 196, 0.4);
+
+  counter-increment: data;
+
+  @include from($laptop) {
+    height: $spacing * 11;
+  }
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+
+  &::before {
+    position: relative;
+    content: "00" counter(data);
+
+    margin-right: $spacing * 11.5;
+
+    @include from($desktop) {
+      margin-right: $spacing * 17.5;
+    }
+
+    @include until($only-tablet) {
+      display: none;
+    }
+  }
+}
+
+.person__description {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  width: 60%;
+  height: $spacing * 8;
+  margin: 0;
+
+  @include font(19px, 1.4);
+  font-weight: 500;
+  color: $white1000;
+  text-transform: uppercase;
+  letter-spacing: -0.0225em;
+  text-align: right;
+
+  border-bottom: 1px solid rgba(196, 196, 196, 0.4);
+
+  @include from($laptop) {
+    height: $spacing * 11;
+
+    font-size: 28px;
+  }
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+}
+
+.person__back {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  order: -1;
+
+  margin-bottom: $spacing * 8;
+
+  @include from($laptop) {
+    position: absolute;
+    top: 0;
+    left: 3.5%;
+
+    margin: 0;
+  }
+}
+
+.person__back svg {
+  margin-top: $spacing * 1.5;
+}

@@ -1,0 +1,113 @@
+.features {
+  padding: $spacing * 10 0;
+
+  @include from($laptop) {
+    padding: $spacing * 16 0;
+  }
+
+  @include from($desktop) {
+    padding: $spacing * 20 0;
+  }
+}
+
+.features__wrapper {
+  position: relative;
+}
+
+.features__title {
+  @include visuallyHidden;
+}
+
+.features__list {
+  display: flex;
+  flex-direction: column;
+  align-items: initial;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  counter-reset: list;
+}
+
+.features__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: $spacing * 5 0 $spacing * 6 0;
+
+  border-bottom: 1px solid $white1000;
+
+  counter-increment: list;
+
+  transition-timing-function: linear;
+  transition-duration: 350ms;
+  transition-property: opacity, transform;
+
+  @include from($laptop) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding: $spacing * 7 0;
+  }
+
+  @include from($desktop) {
+    padding: $spacing * 7 $spacing * 9;
+  }
+
+  &:first-child {
+    border-top: 1px solid $white1000;
+  }
+
+  &--hidden {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+.features__caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0;
+  margin-bottom: $spacing * 4;
+
+  text-align: left !important;
+
+  @include from($laptop) {
+    align-items: flex-start;
+
+    margin-bottom: 0;
+  }
+
+  &::before {
+    position: relative;
+    content: "00" counter(list);
+
+    margin-bottom: $spacing * 5;
+
+    font-family: "IBM Plex Mono", monospace;
+    @include font(20px, 1.3);
+    color: $white1000;
+
+    @include from($laptop) {
+      margin-bottom: $spacing * 1.5;
+    }
+  }
+}
+
+.features__text {
+  margin: 0;
+  width: 100%;
+
+  text-align: center;
+
+  @include from($laptop) {
+    max-width: 320px;
+
+    text-align: left;
+  }
+}

@@ -1,0 +1,13 @@
+.no-transition,
+.no-transition * {
+  transition: none !important;
+}
+
+.accessible-tabs * {
+  outline: initial;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}

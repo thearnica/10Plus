@@ -1,0 +1,164 @@
+.network {
+  padding-top: $spacing * 8;
+
+  @include from($laptop) {
+    padding-top: $spacing * 16;
+  }
+
+  @include from($desktop) {
+    padding-top: $spacing * 20;
+  }
+}
+
+.network__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.network__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0;
+
+  transition-timing-function: linear;
+  transition-duration: 350ms;
+  transition-property: opacity, transform;
+
+  &--hidden {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+.network__note {
+  width: 100%;
+  max-width: 570px;
+  margin: 0;
+  margin-top: $spacing * 5;
+
+  text-align: center;
+
+  transition-timing-function: linear;
+  transition-duration: 350ms;
+  transition-property: opacity, transform;
+
+  @include from($laptop) {
+    margin-top: $spacing * 7;
+  }
+
+  @include from($desktop) {
+    margin-top: $spacing * 9;
+  }
+
+  &--hidden {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+.network__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-top: $spacing * 4;
+
+  list-style: none;
+
+  @include from($laptop) {
+    flex-direction: row;
+    align-items: initial;
+
+    margin-top: $spacing * 10;
+  }
+
+  @include from($desktop) {
+    margin-top: $spacing * 15;
+  }
+}
+
+.network__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  padding: $spacing * 5 0;
+
+  @include font(15px, 1.6);
+  text-align: center;
+  color: $white1000;
+
+  border-bottom: 1px solid $white1000;
+
+  transition-timing-function: linear;
+  transition-duration: 350ms;
+  transition-property: opacity;
+
+  @include from($laptop) {
+    width: 33.3%;
+    padding: $spacing * 4 0;
+
+    font-size: 16px;
+
+    border-bottom: 0;
+    border-right: 1px solid $white1000;
+  }
+
+  &::selection {
+    background-color: $red1000;
+    color: $black1000;
+  }
+
+  &:last-child {
+    border: 0;
+  }
+
+  &--hidden {
+    opacity: 0;
+  }
+}
+
+.network__item span {
+  margin-bottom: $spacing * 3;
+
+  @include font(110px, 1);
+
+  @include from($tablet) {
+    margin-bottom: $spacing * 2.5;
+  }
+
+  @include from($desktop) {
+    font-size: 120px;
+  }
+}
+
+.network__text {
+  width: 100%;
+  max-width: 910px;
+  margin: 0;
+  margin-top: $spacing * 8;
+
+  transition-timing-function: linear;
+  transition-duration: 350ms;
+  transition-property: opacity, transform;
+
+  @include from($laptop) {
+    margin-top: $spacing * 16;
+  }
+
+  @include from($desktop) {
+    margin-top: $spacing * 20;
+  }
+
+  &--hidden {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}

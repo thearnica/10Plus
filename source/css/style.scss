@@ -1,0 +1,45 @@
+@import "../sass/mixin";
+@import "../sass/global";
+@import "../sass/variables";
+@import "../sass/key-frames";
+@import "../sass/fonts";
+
+@import "../sass/slick/slick";
+@import "../sass/slick/slick-theme";
+
+//common block
+@import "../sass/blocks/page";
+@import "../sass/blocks/header";
+@import "../sass/blocks/main";
+@import "../sass/blocks/footer";
+@import "../sass/blocks/modal-navigation";
+@import "../sass/blocks/navigation";
+@import "../sass/blocks/logotype";
+@import "../sass/blocks/wrapper";
+@import "../sass/blocks/title";
+@import "../sass/blocks/text";
+@import "../sass/blocks/social";
+@import "../sass/blocks/link";
+@import "../sass/blocks/full-screen";
+
+//main page
+
+@import "../sass/blocks/promo";
+@import "../sass/blocks/services";
+@import "../sass/blocks/network";
+@import "../sass/blocks/features";
+@import "../sass/blocks/links";
+
+//talent page
+
+@import "../sass/blocks/talent";
+@import "../sass/blocks/persone";
+
+//ventures page
+
+@import "../sass/blocks/ventures";
+
+//media page
+
+@import "../sass/blocks/media";
+@import "../sass/blocks/brand";

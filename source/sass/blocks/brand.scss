@@ -1,0 +1,190 @@
+.brand {}
+
+.brand__list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.brand__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 33.3%;
+  min-height: 120px;
+
+  border-bottom: 1px solid $white1000;
+
+  @include from($tablet) {
+    width: 25%;
+    min-height: 160px;
+  }
+
+  &:nth-last-child(1),
+  &:nth-last-child(2) {
+    border-bottom: 0;
+  }
+
+  &:nth-last-child(3) {
+    @include until($only-mobile) {
+      border-bottom: 0;
+    }
+  }
+
+  &--espm img {
+    width: 72px;
+
+    @include from($tablet) {
+      width: 88px;
+    }
+  }
+
+  &--tencent img {
+    width: 40px;
+
+    @include from($tablet) {
+      width: 48px;
+    }
+  }
+
+  &--gq img {
+    width: 48px;
+
+    @include from($tablet) {
+      width: 64px;
+    }
+  }
+
+  &--elle img {
+    width: 62px;
+
+    @include from($tablet) {
+      width: 78px;
+    }
+  }
+
+  &--equinox img {
+    width: 112px;
+
+    @include from($tablet) {
+      width: 144px;
+    }
+  }
+
+  &--noname img {
+    width: 40px;
+
+    @include from($tablet) {
+      width: 48px;
+    }
+  }
+
+  &--tiktok img {
+    width: 30px;
+
+    @include from($tablet) {
+      width: 38px;
+    }
+  }
+
+  &--sothebys img {
+    width: 104px;
+
+    @include from($tablet) {
+      width: 120px;
+    }
+  }
+
+  &--grazia img {
+    width: 76px;
+
+    @include from($tablet) {
+      width: 96px;
+    }
+  }
+
+  &--qq-1 img {
+    width: 40px;
+
+    @include from($tablet) {
+      width: 48px;
+    }
+  }
+
+  &--christies img {
+    width: 102px;
+
+    @include from($tablet) {
+      width: 120px;
+    }
+  }
+
+  &--bilibili img {
+    width: 40px;
+
+    @include from($tablet) {
+      width: 48px;
+    }
+  }
+
+  &--cba img {
+    width: 38px;
+
+    @include from($tablet) {
+      width: 48px;
+    }
+  }
+
+  &--bazaar img {
+    width: 90px;
+
+    @include from($tablet) {
+      width: 106px;
+    }
+  }
+
+  &--games img {
+    width: 72px;
+
+    @include from($tablet) {
+      width: 88px;
+    }
+  }
+
+  &--vogue img {
+    width: 75px;
+
+    @include from($tablet) {
+      width: 92px;
+    }
+  }
+
+  &--qq-2 img {
+    width: 40px;
+
+    @include from($tablet) {
+      width: 48px;
+    }
+  }
+
+  &--weibo img {
+    width: 48px;
+
+    @include from($tablet) {
+      width: 56px;
+    }
+  }
+}
+
+.brand__item img {
+height: auto;
+}

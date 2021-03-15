@@ -1,0 +1,96 @@
+.ventures {
+}
+
+.ventures__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-bottom: $spacing * 6;
+
+  @include from($laptop) {
+    padding-bottom: $spacing * 10;
+  }
+}
+
+.ventures__investments {
+  max-width: 672px;
+  margin: 0;
+  margin-top: $spacing * 4;
+
+  @include from($tablet) {
+    margin-top: $spacing * 6;
+  }
+
+  @include from($laptop) {
+    margin-top: $spacing * 10;
+  }
+}
+
+.ventures__portfolios {
+  max-width: 834px;
+  margin: 0;
+  margin-top: $spacing * 3;
+
+  text-align: center;
+
+  @include from($laptop) {
+    margin-top: $spacing * 6;
+  }
+}
+
+.ventures__image {
+  width: 100%;
+  margin-top: $spacing * 4;
+
+  @include from($tablet) {
+    margin-top: $spacing * 6;
+  }
+
+  @include from($laptop) {
+    margin-top: $spacing * 10;
+  }
+}
+
+.ventures__ratio-image {
+  width: 100%;
+  height: 0;
+  padding-top: 35%;
+
+  background-image: url("./images/ventures.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    background-image: url("./images/ventures@2x.png");
+  }
+}
+
+.ventures__clients {
+  max-width: 860px;
+  margin: 0;
+  margin-top: $spacing * 6;
+
+  @include from($tablet) {
+    margin-top: $spacing * 8;
+  }
+
+  @include from($laptop) {
+    margin-top: $spacing * 14;
+  }
+}
+
+.ventures__graph {
+  width: 100%;
+}
+
+.ventures__ratio-graph {
+  height: 0;
+  padding-top: 35%;
+
+  background-image: url("./images/chart.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

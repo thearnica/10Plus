@@ -1,0 +1,144 @@
+.services {
+  width: 100%;
+  padding-top: $spacing * 8;
+
+  overflow: hidden;
+
+  @include from($laptop) {
+    padding-top: $spacing * 12;
+  }
+
+  @include from($desktop) {
+    padding-top: $spacing * 14;
+  }
+}
+
+.services__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0;
+
+  transition-timing-function: linear;
+  transition-duration: 350ms;
+  transition-property: opacity, transform;
+
+  &--hidden {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+.services__list {
+  width: 100%;
+  margin: 0;
+  margin-top: $spacing * 6;
+  padding: 0;
+
+  list-style: none;
+
+  @include from($tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include from($laptop) {
+    margin-top: $spacing * 10;
+  }
+
+  @include from($desktop) {
+    margin-top: $spacing * 14;
+  }
+}
+
+.services__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: $spacing * 5 0;
+
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 16px;
+  line-height: 1.2;
+  color: $white800;
+  text-align: center;
+
+  transition-timing-function: linear;
+  transition-duration: 250ms;
+  transition-property: opacity;
+
+  @include from($tablet) {
+    border-top: 1px solid $white1000;
+  }
+
+  &::before {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 48px;
+    margin-bottom: $spacing * 2;
+  }
+
+  &--negotiating::before {
+    content: url("./images/negotiating.svg");
+  }
+
+  &--building::before {
+    content: url("./images/building.svg");
+  }
+
+  &--marketing::before {
+    content: url("./images/marketing.svg");
+  }
+
+  &--preparation::before {
+    content: url("./images/preparation.svg");
+  }
+
+  &--guidance::before {
+    content: url("./images/guidance.svg");
+  }
+
+  &--training::before {
+    content: url("./images/training.svg");
+  }
+
+  &--mentoring::before {
+    content: url("./images/mentoring.svg");
+  }
+
+  &--personal::before {
+    content: url("./images/personal.svg");
+  }
+
+  &--advisory::before {
+    content: url("./images/advisory.svg");
+  }
+
+  &:nth-last-child(1),
+  &:nth-last-child(2),
+  &:nth-last-child(3) {
+    @include from($tablet) {
+      border-bottom: 1px solid $white1000;
+    }
+  }
+
+  &--hidden {
+    opacity: 0;
+  }
+}
+
+

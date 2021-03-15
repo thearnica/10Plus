@@ -1,0 +1,62 @@
+@mixin font ($size, $line-height) {
+  font-size: $size;
+  line-height: $line-height;
+}
+
+@mixin font-set ($size, $line-height, $letter-spacing) {
+  font-size: $size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin globalAnimated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@mixin center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin visuallyHidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 1px;
+  height: 1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@mixin clearList {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+@mixin image {
+  width: 100%;
+  height: auto;
+}
+
+@mixin from($device) {
+  @media screen and (min-width: $device) {
+    @content
+  }
+}
+
+@mixin until($breakpoint) {
+  @media screen and (max-width: $breakpoint - 1px) {
+    @content;
+  }
+}

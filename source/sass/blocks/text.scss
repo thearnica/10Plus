@@ -1,0 +1,8 @@
+.text {
+  @include font(15px, 1.6);
+  color: $white1000;
+
+  @include from($laptop) {
+    font-size: 16px;
+  }
+}

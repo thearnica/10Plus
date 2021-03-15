@@ -1,0 +1,100 @@
+.navigation {
+
+}
+
+.navigation__list {
+  @include clearList;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include from($laptop) {
+    flex-direction: row;
+    align-items: initial;
+  }
+}
+
+.navigation__item {
+  margin-bottom: $spacing * 8;
+
+  @include from($laptop) {
+    margin-bottom: 0;
+    margin-right: $spacing * 8;
+  }
+
+  &:last-of-type {
+    margin: 0;
+  }
+}
+
+.navigation__link {
+  position: relative;
+
+  padding: 0;
+
+  @include font(40px, 1);
+  font-family: "Noir Pro", monospace;
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $white300;
+
+  border: 0;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  transition-timing-function: linear;
+  transition-duration: 200ms;
+  transition-property: color;
+
+  @include from($laptop) {
+    @include font(16px, 80px);
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: -30px;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background-color: $red1000;
+
+    transform: scaleX(0);
+    transform-origin: bottom right;
+
+    transition-property: transform;
+    transition-timing-function: linear;
+    transition-duration: 200ms;
+
+    @include until($only-tablet) {
+      display: none;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: $white1000;
+  }
+
+  &--active,
+  &:not([href]) {
+    color: $red1000;
+  }
+
+  &--active::after,
+  &:not([href])::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  &:not([href]) {
+    cursor: default;
+  }
+}

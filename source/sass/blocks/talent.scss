@@ -1,0 +1,280 @@
+.talent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: $spacing * 2;
+
+  @include from($laptop) {
+    padding-top: $spacing * 6;
+  }
+}
+
+.talent__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.talent__title {
+  margin: 0;
+  margin-bottom: $spacing * 4;
+
+  transition-timing-function: linear;
+  transition-duration: 400ms;
+  transition-property: opacity, transform;
+
+  @include from($laptop) {
+    margin-bottom: $spacing * 10;
+  }
+
+  @include from(1440px) {
+    margin-bottom: $spacing * 15;
+  }
+
+  &--hidden {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+.talent__content {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-grow: 1;
+
+  width: 100%;
+  max-width: 1176px;
+
+  transition-timing-function: linear;
+  transition-duration: 300ms;
+  transition-property: opacity, transform;
+
+  &--hidden {
+    opacity: 0;
+  }
+}
+
+.talent__list {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  counter-reset: talent + 1;
+
+  @include from($laptop) {
+    width: 27%;
+  }
+}
+
+.talent__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: $spacing * 10;
+
+  counter-increment: talent;
+
+  @include from($laptop) {
+    flex-shrink: 0;
+    align-items: flex-start;
+
+    height: 100vh;
+    margin-top: 0;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.talent__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  text-decoration: none;
+
+  @include from($laptop) {
+    flex-direction: row;
+
+    pointer-events: none;
+  }
+
+  &--active {
+    pointer-events: all;
+  }
+}
+
+.talent__caption {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  margin: 0;
+
+  font-family: "Noir Pro", monospace;
+  font-size: 40px;
+  line-height: 0.88;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+
+  color: $white1000;
+
+  transition-timing-function: linear;
+  transition-duration: 250ms;
+  transition-property: color;
+
+  @include from($tablet) {
+    font-size: 84px;
+  }
+
+  @include from($laptop) {
+    font-size: 64px;
+    text-align: left;
+    color: rgba(196, 196, 196, 0.15);
+  }
+
+  @include from(1440px) {
+    font-size: 84px;
+  }
+
+  &--active {
+    color: $white1000;
+  }
+
+  &::before {
+    position: relative;
+    content: "00" counter(talent);
+
+    margin-top: $spacing * 0.75;
+    margin-right: $spacing * 4;
+
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+
+    @include until($only-tablet) {
+      display: none;
+    }
+  }
+}
+
+.talent__fixed {
+  position: sticky;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 73%;
+
+  @include until($only-tablet) {
+    display: none;
+  }
+}
+
+.talent__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 63%;
+  height: auto;
+
+  transition-property: opacity;
+  transition-duration: 350ms;
+  transition-timing-function: linear;
+
+  &--hidden {
+    opacity: 0;
+  }
+}
+
+.talent__image img {
+  width: 100%;
+  height: auto;
+}
+
+.talent__mobile-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  order: -1;
+
+  width: 87.2vw;
+  height: 87.2vw;
+  margin-bottom: -$spacing * 3;
+
+  overflow: hidden;
+
+  @include from($laptop) {
+    display: none;
+  }
+}
+
+.talent__mobile-image img {
+  width: 100%;
+  height: auto;
+}
+
+.talent__explore {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-left: auto;
+
+  @include font(16px, 1.3);
+  font-weight: 600;
+  color: $white1000;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  @include until($only-tablet) {
+    display: none;
+  }
+}
+
+.talent__explore svg {
+  margin-top: $spacing * 1.5;
+}
+
+.talent__mobile-explore {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: $spacing * 4;
+
+  @include from($laptop) {
+    display: none;
+  }
+}
+
+.talent__mobile-explore svg {
+  margin-top: $spacing * 1.5;
+}
+
